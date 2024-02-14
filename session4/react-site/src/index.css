@@ -1,0 +1,10 @@
+.fancy-button {
+  margin: 10px;
+  border: 1px solid rgba(255, 137, 137, 0.5);
+  color: black;
+  padding: 10px;
+}
+
+.big {
+  font-size: 40px;
+}
