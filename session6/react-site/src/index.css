@@ -1,0 +1,80 @@
+html,body {
+  margin: 0
+}
+.fancy-button {
+  margin: 10px;
+  border: 1px solid rgba(255, 137, 137, 0.5);
+  color: black;
+  padding: 10px;
+}
+
+.big {
+  font-size: 40px;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(20, 59, 230, 0.5);
+}
+
+header a {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgba(76, 0, 255, 0.5);
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: white; 
+}
+
+header a:hover {
+  background-color: rgba(76, 0, 255, 0.5);
+  color: white;
+}
+
+header a.active {
+  background-color: rgba(76, 0, 255, 0.5);
+  color: white;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1
+}
+
+
+footer {
+  background-color: rgba(20, 59, 230, 0.5);
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-image {
+  width: 200px;
+  height: 200px;
+}
+
+.product-box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
