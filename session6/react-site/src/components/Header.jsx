@@ -21,6 +21,10 @@ const links = [
     title: "Products",
     pathname: "/products",
   },
+  {
+    title: "Todos",
+    pathname: "/todos",
+  },
 ];
 
 const Header = () => {

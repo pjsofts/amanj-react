@@ -1,12 +1,50 @@
-import { useParams } from "react-router-dom";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { addTodo, getTodos } from "../api/todos";
+import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Todos = () => {
-  const { id } = useParams();
+  const queryClient = useQueryClient();
+
+  const [value, setValue] = useState("");
+  const query = useQuery({ queryKey: ["todos"], queryFn: getTodos });
+  console.log("todos data is", query.data);
+
+  // Mutations
+  const { mutate, isPending } = useMutation({
+    mutationFn: addTodo,
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
+    },
+  });
 
   return (
     <div>
       Todos
-      <div>Current Todo is {id}</div>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />
+      <button
+        type="button"
+        onClick={() => {
+          mutate(value);
+        }}
+      >
+        Add Todo
+      </button>
+      <div className="todo-holder">
+        {query.data?.map((todo) => (
+          <span key={todo.id}>
+            <div className="todo">{todo.content}</div>
+          </span>
+        ))}
+        {isPending && <span className="pending">{value}</span>}
+      </div>
     </div>
   );
 };

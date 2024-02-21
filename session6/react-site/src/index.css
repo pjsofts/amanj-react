@@ -78,3 +78,19 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
+.todo {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1px;
+  margin: 1px;
+}
+
+.todo-holder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pending {
+  opacity: 0.5;
+}

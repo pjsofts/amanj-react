@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/products";
+import { useQuery } from "@tanstack/react-query";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      const data = await getProducts();
-      setProducts(data);
-    }
-    getData();
-  }, []);
+  const query = useQuery({ queryKey: ["products"], queryFn: getProducts });
 
-  
   return (
     <div className="product-row">
-      {products.map((product) => (
+      {query.data?.map((product) => (
         <div key={product.id} className="product-box">
           <img
             className="product-image"
