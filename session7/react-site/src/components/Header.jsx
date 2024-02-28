@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import HeaderStyle from "./Header.Style";
-
+import cs from "classnames";
 const links = [
   {
     title: "Contact",
@@ -33,16 +32,17 @@ const Header = () => {
   const { pathname } = location;
   const color = "blue";
   return (
-    <header>
+    <header className="flex justify-between bg-primary">
       {links.map((link, index) => (
         <Link
           key={index}
-          className={pathname === link.pathname ? "active" : ""}
+          className={cs(
+            pathname === link.pathname ? "active" : "",
+            "m-3 p-3 border-2 border-solid border-red-400 hover:text-[white] hover:bg-[blue]"
+          )}
           to={link.pathname}
         >
-          <div className="bg-red" style={HeaderStyle}>
-            {link.title}
-          </div>
+          <div className="">{link.title}</div>
         </Link>
       ))}
     </header>

@@ -6,6 +6,7 @@
 html,body {
   margin: 0
 }
+
 .fancy-button {
   margin: 10px;
   border: 1px solid rgba(255, 137, 137, 0.5);
@@ -17,27 +18,14 @@ html,body {
   font-size: 40px;
 }
 
-
-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(20, 59, 230, 0.5);
-}
-
 header a {
-  margin: 10px;
   padding: 10px;
-  border: 1px solid rgba(76, 0, 255, 0.5);
   color: black;
   text-decoration: none;
   border-radius: 8px;
   background-color: white; 
 }
 
-header a:hover {
-  background-color: rgba(76, 0, 255, 0.5);
-  color: white;
-}
 
 header a.active {
   background-color: rgba(76, 0, 255, 0.5);
