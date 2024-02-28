@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import HeaderStyle from "./Header.Style";
 
 const links = [
   {
@@ -30,7 +31,7 @@ const links = [
 const Header = () => {
   let location = useLocation();
   const { pathname } = location;
-
+  const color = "blue";
   return (
     <header>
       {links.map((link, index) => (
@@ -39,7 +40,9 @@ const Header = () => {
           className={pathname === link.pathname ? "active" : ""}
           to={link.pathname}
         >
-          {link.title}
+          <div className="bg-red" style={HeaderStyle}>
+            {link.title}
+          </div>
         </Link>
       ))}
     </header>

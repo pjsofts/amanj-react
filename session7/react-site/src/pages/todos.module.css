@@ -1,0 +1,5 @@
+.todoHolder {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #cee7ff;
+  }

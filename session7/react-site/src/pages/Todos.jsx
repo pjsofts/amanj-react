@@ -3,6 +3,8 @@ import { addTodo, getTodos } from "../api/todos";
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 
+import classes from "./todos.module.css";
+
 const Todos = () => {
   const queryClient = useQueryClient();
 
@@ -37,7 +39,7 @@ const Todos = () => {
       >
         Add Todo
       </button>
-      <div className="todo-holder">
+      <div className={classes.todoHolder}>
         {query.data?.map((todo) => (
           <span key={todo.id}>
             <div className="todo">{todo.content}</div>

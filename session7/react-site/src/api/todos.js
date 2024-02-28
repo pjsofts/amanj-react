@@ -1,5 +1,7 @@
-const URL = "https://api.todoist.com/rest/v2";
-const TOKEN = "052fc523d1a84f13d06ef40bb8210d7466796230";
+const URL = import.meta.env.VITE_BACKEND_URL;
+const TOKEN = import.meta.env.VITE_TOKEN;
+
+console.log("this is a test, url:, token:", URL, TOKEN);
 
 async function getTodos() {
   const response = await fetch(`${URL}/tasks`, {
