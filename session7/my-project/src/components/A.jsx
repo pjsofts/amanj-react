@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { incrementA } from "../store/slices/counterSlice";
 
-const A = ({ c }) => {
-  const [a, setA] = useState(0);
+const A = () => {
+  const dispatch = useDispatch();
+  const a = useSelector((state) => state.counter.a);
+  const c = useSelector((state) => state.counter.c);
   return (
     <div className="m-4 p-4 border border-solid border-[#ccc]">
       <div>This is A: {a}</div>
       <div>C value is: {c}</div>
-      <button onClick={() => setA(a + 1)}>Add A</button>
+      <button onClick={() => dispatch(incrementA())}>Add A</button>
     </div>
   );
 };

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { incrementB } from "../store/slices/counterSlice";
 
 const B = () => {
-  const [b, setB] = useState(0);
+  const dispatch = useDispatch();
+  const b = useSelector((state) => state.counter.b);
   return (
     <div className="m-4 p-4 border border-solid border-[#ccc]">
       This is B : {b}
-      <button onClick={() => setB(b + 1)}>Add B</button>
+      <button onClick={() => dispatch(incrementB())}>Add B</button>
     </div>
   );
 };
