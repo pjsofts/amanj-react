@@ -12,7 +12,7 @@ async function getGames(search: string) {
     console.log("inside getGames data is", data);
     return data;
   } catch (e) {
-    console.log("some error happened in api call");
+    throw new Error("No games");
   }
 }
 
